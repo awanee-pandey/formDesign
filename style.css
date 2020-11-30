@@ -13,59 +13,78 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url(bg.jpeg) no-repeat top center/ cover;
-  background-color: black;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(bg.jpeg) no-repeat top center/ cover;
 }
 
-input{
-  outline: none;
-}
-
-ul,li{
+ul,
+li {
   list-style: none;
 }
 
-.form__title{
+/* .background{
+  background-size: cover;
+  height: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  background: url(bg.jpeg) no-repeat top center/ cover;
+  width: 100%;
+  z-index: -1;
+  opacity: .5;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+} */
+
+.form__title {
   font-size: 40px;
-  color:#fff;
+  color: #fff;
   margin-bottom: 5px;
+  z-index: 1;
 }
 
-.form__subtitle{
-  font-size:12px;
-  color:#fff;
+.form__subtitle {
+  font-size: 12px;
+  color: #fff;
   margin-bottom: 12px;
+  z-index: 1;
 }
 
-form{
+form {
   max-width: 800px;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.877);
-  padding:50px;
-  box-shadow:0 2px 2px rgba(0, 0, 0, 0.349);
-
+  background-color: rgba(0, 0, 0, 0.705);
+  padding: 50px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.349);
+  display: flex;
+  z-index: 1;
+  position: relative;
 }
 
 .form__rows {
-  display:flex;
+  display: flex;
   flex-direction: column;
-  width:100%
+  width: 80%;
 }
 
-.form__row{
-  display:flex;
+.form__row {
+  display: flex;
   margin-bottom: 20px;
-  width:100%
+  width: 100%;
+  z-index: 1;
 }
 
-.form__col{
+.form__col {
   margin-right: 20px;
+  width: 100%;
 }
 
-.form__col input{
+.form__col input {
   display: flex;
   align-items: center;
-  height:45px;
+  height: 45px;
   width: 100%;
   color: #fff;
   font-size: 12px;
@@ -73,9 +92,37 @@ form{
   border: none;
   background: rgba(0, 0, 0, 0.15);
   border-bottom: 1px solid rgb(165, 165, 165);
+  z-index: 1;
 }
 
+.form__col input::placeholder {
+  color: #fff;
+}
 
-.right__section{
- 
+.right__section {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 500px;
+  z-index: 2;
+}
+
+.right__section img {
+  width: 100%;
+
+  opacity: 0.7;
+}
+
+.form__row button {
+  padding: 10px 50px;
+  background: linear-gradient(to right, #175007 56%, #ffffff 100%);
+}
+
+.form__column li {
+  color: #fff;
+  margin-top: 10px;
+}
+
+.form__column input {
+  margin-right: 15px;
 }
